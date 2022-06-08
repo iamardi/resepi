@@ -12,7 +12,6 @@ export default function Hero() {
       pathname: '/',
       query: { search: keyword },
     });
-    console.log(keyword, 'di HERO');
   }
   return (
     <section

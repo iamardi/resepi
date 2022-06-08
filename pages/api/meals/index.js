@@ -10,9 +10,7 @@ export default async function handler(req, res) {
 
     // for (let i = 0; i < recipes.length; i++) {
     //   if (!recipes[i].image) {
-    //     console.log('masuk loop', recipes[i].title)
     //     const photo = await fetchUnsplashPhoto(recipes[i].title);
-    //     console.log(photo);
 
     //     recipes[i].image = photo;
     //   }
