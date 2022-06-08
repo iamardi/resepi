@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import useSWR from 'swr';
 import { MdOutlineTimer } from 'react-icons/md';
@@ -13,6 +12,7 @@ function QuickMeal() {
       revalidateOnReconnect: false,
     }
   );
+
   return (
     <section className='dark:bg-slate-200 dark:text-gray-600 p-8'>
       <div className='flex justify-center'>
@@ -25,7 +25,10 @@ function QuickMeal() {
           meals?.map((food) => (
             <Link
               key={food.id}
-              href={{ pathname: '/[id]', query: { id: food.id, name: food.title } }}
+              href={{
+                pathname: '/[id]',
+                query: { id: food.id, name: food.title },
+              }}
             >
               <div className='bg-white text-slate-800 rounded card shadow text-center cursor-pointer hover:shadow-xl hover:outline-4 flex justify-around h-72 overflow-hidden'>
                 <div

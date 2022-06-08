@@ -5,7 +5,6 @@ import { MdOutlineTimer } from 'react-icons/md';
 
 export default function SearchMeals() {
   const { query } = useRouter();
-  console.log(query, 'di searchMeals component');
   const { data: meals, error } = useSWR(
     `/api/search?search=${query.search}`,
     (url) => fetch(url).then((res) => res.json()),

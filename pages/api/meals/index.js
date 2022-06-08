@@ -1,5 +1,3 @@
-import { quickMeals } from '../../../randomMeals';
-
 export default async function handler(req, res) {
   try {
     const data = await fetchQuickMeals();
@@ -21,7 +19,7 @@ export default async function handler(req, res) {
     //   results.push(recipes[i]);
     // }
 
-    res.status(200).json(results);
+    // res.status(200).json(results);
   } catch (err) {
     res.status(500).json({ message: 'Internal Server Error, bro' });
   }
