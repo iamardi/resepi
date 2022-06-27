@@ -4,6 +4,7 @@ import Hero from '../components/hero';
 import QuickMeal from '../components/quickMeal';
 import { useRouter } from 'next/router';
 import SearchMeals from '../components/searchMeals';
+import Footer from '../components/footer';
 
 export default function Home() {
   const { query } = useRouter();
@@ -19,6 +20,7 @@ export default function Home() {
         <Hero />
         {query?.search?.length > 0 ? <SearchMeals /> : <QuickMeal />}
       </main>
+      <Footer/>
     </div>
   );
 }

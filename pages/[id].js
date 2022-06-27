@@ -5,6 +5,7 @@ import { MdTimer, MdArrowBackIosNew } from 'react-icons/md';
 import { FaTag } from 'react-icons/fa';
 import Image from 'next/image';
 import Head from 'next/head';
+import Footer from '../components/footer';
 
 export default function MealPage() {
   const { query, back } = useRouter();
@@ -25,10 +26,13 @@ export default function MealPage() {
         <meta name='description' content='Simple Recipe App' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <Header />
       <main>
-        <Header />
-        <button onClick={() => back()} className='flex items-center md:ml-10 md:mt-10 p-2 cursor-pointer'>
-          <MdArrowBackIosNew/> Back
+        <button
+          onClick={() => back()}
+          className='flex items-center md:ml-10 md:mt-10 p-2 cursor-pointer'
+        >
+          <MdArrowBackIosNew /> Back
         </button>
         {error ? (
           <section>
@@ -94,7 +98,8 @@ export default function MealPage() {
                   </h2>
                   <div className='flex justify-center'>
                     <div className='card p-6 md:w-5/6 shadow rounded-lg'>
-                      {!data.analyzedInstructions[0] && 'We are sorry, apparently no instructions for this recipe.'}
+                      {!data.analyzedInstructions[0] &&
+                        'We are sorry, apparently no instructions for this recipe.'}
                       {data.analyzedInstructions[0]?.steps?.map((step) => (
                         <div key={step.number} className='p-2'>
                           {step.number}. {step.step}
@@ -108,6 +113,7 @@ export default function MealPage() {
           </section>
         )}
       </main>
+      <Footer />
     </div>
   );
 }
